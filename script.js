@@ -263,12 +263,55 @@ $.getJSON('https://ipapi.co/'+$(ip).val()+'/json', function(data){
 var search_form = document.getElementsByClassName('search__form');
 console.log(search_form);
 
-
-
-function createHome(){
+function createRen(){
 
   var homeDiv = document.createElement('div');
-        homeDiv.innerHTML = '<div class="home_container"><h2>I am hungry</h2><p>Shall we go eat?</p><div class="close_home" href="">x</div></div>';
+        homeDiv.innerHTML = '<div class="home_container"><h2>Contract Renounced:</h2><p>Coming Soon</p><div class="close_home" href="">x</div></div>';
+        homeDiv.setAttribute('class', 'home');
+        document.body.appendChild(homeDiv);
+
+        $('.close_home').click(function(){
+            $('.home').remove();
+            console.log('Home Erased');
+        });
+
+
+}
+
+function createLp(){
+
+  var homeDiv = document.createElement('div');
+        homeDiv.innerHTML = '<div class="home_container"><h2>Liquidity Locked:</h2><p>Coming Soon</p><div class="close_home" href="">x</div></div>';
+        homeDiv.setAttribute('class', 'home');
+        document.body.appendChild(homeDiv);
+
+        $('.close_home').click(function(){
+            $('.home').remove();
+            console.log('Home Erased');
+        });
+
+
+}
+
+function createTok(){
+
+  var homeDiv = document.createElement('div');
+        homeDiv.innerHTML = '<div class="home_container"><h2>Tokenomics:</h2><p>95% Liquidity Pool // 5% Team</p><div class="close_home" href="">x</div></div>';
+        homeDiv.setAttribute('class', 'home');
+        document.body.appendChild(homeDiv);
+
+        $('.close_home').click(function(){
+            $('.home').remove();
+            console.log('Home Erased');
+        });
+
+
+}
+
+function createCa(){
+
+  var homeDiv = document.createElement('div');
+        homeDiv.innerHTML = '<div class="home_container"><h2>Contract:</h2><p>Pending</p><div class="close_home" href="">x</div></div>';
         homeDiv.setAttribute('class', 'home');
         document.body.appendChild(homeDiv);
 
@@ -285,23 +328,58 @@ var navigationLink = $('.terminal__line a');
 
 navigationLink.click(function(e){
   if ($(this).hasClass('out')) {
-    window.open('http://instagram.com/arcticben.co.uk');
-  }else
-  {
-  createHome();
+    window.open('https://twitter.com/0xBased_Base');
   }
 });
 
 
+navigationLink.click(function(e){
+  if ($(this).hasClass('out2')) {
+    window.open('https://t.me/join_0xBased');
+  }
+});
+
+navigationLink.click(function(e){
+  if ($(this).hasClass('lp')) {
+    createLp();
+  }
+});
+
+navigationLink.click(function(e){
+  if ($(this).hasClass('tokenomics')) {
+    createTok();
+  }
+});
+
+navigationLink.click(function(e){
+  if ($(this).hasClass('ren')) {
+    createRen();
+  }
+});
+
+
+navigationLink.click(function(e){
+  if ($(this).hasClass('ca')) {
+    createCa();
+  }
+});
+
 
 	$(search_form).submit(function( event ) {
-	  if ( 'aboutme' === $( "input" ).val() || 'codelab' === $( "input" ).val() ||  'contact' === $( "input" ).val() || 'gethacked' === $( "input" ).val() || 'blog' === $( "input" ).val() || 'home'  === $( "input" ).val()) {
+	  if ( 'ca' === $( "input" ).val() || 'codelab' === $( "input" ).val() ||  'contact' === $( "input" ).val() || 'blog' === $( "input" ).val() || 'home'  === $( "input" ).val()) {
 
     createHome();
 
-	  } else if ( $( "input" ).val() === "instagram" ) {
-				window.open('http://instagram.com/arcticben.co.uk');
-  		} else if ($( "input" ).val() === "ipconfig") {
+  } else if ( $( "input" ).val() === "twitter" ) {
+				window.open('https://twitter.com/0xBased_Base');
+
+  		} else if ( $( "input" ).val() === "telegram" ) {
+    				window.open('https://t.me/join_0xBased');
+
+          } else if ( $( "input" ).val() === "uniswap" ) {
+        				window.open('https://app.uniswap.org/swap?outputCurrency=&chain=base');
+
+      		}else if ($( "input" ).val() === "ipconfig") {
 
         var binder = $('input').val();
         var terminal_div = document.getElementsByClassName('terminal');
